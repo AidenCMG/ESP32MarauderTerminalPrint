@@ -41,7 +41,7 @@ class Buffer {
     uint32_t bufSizeA = 0;
     uint32_t bufSizeB = 0;
 
-    bool writing = false; // acceppting writes to buffer
+    bool writing = false; // accepting writes to buffer
     bool useA = true; // writing to bufA or bufB
     bool saving = false; // currently saving onto the SD card
 

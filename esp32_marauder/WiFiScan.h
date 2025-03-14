@@ -425,7 +425,7 @@ class WiFiScan
     void setBaseMacAddress(uint8_t macAddr[6]);
     //const char* generateRandomName();
 
-    bool save_serial = false;
+    bool save_serial = true;
     void startPcap(String file_name);
     void startLog(String file_name);
     //String macToString(const Station& station);
