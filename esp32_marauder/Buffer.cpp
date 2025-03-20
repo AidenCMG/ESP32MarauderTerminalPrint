@@ -1,8 +1,8 @@
 #include "Buffer.h"
 #include "lang_var.h"
+#include "Encoder.h"
 
 
-// May be best to create seperate class for conversions
 
 //constructor
 Buffer::Buffer(){
@@ -155,7 +155,7 @@ void Buffer::write(uint16_t n){
   write(buf,2);
 }
 
-// could convert in here
+
 void Buffer::write(const uint8_t* buf, uint32_t len){
   if(!writing) return;
   while(saving) delay(10);
@@ -195,7 +195,7 @@ void Buffer::saveFs(){
   file.close();
 }
 
-// could convert here
+
 void Buffer::saveSerial() {
   // Saves to main console UART, user-facing app will ignore these markers
   // Uses / and ] in markers as they are illegal characters for SSIDs
@@ -233,7 +233,11 @@ void Buffer::saveSerial() {
 
   memcpy(it, mark_close, mark_close_len);
   it += mark_close_len;
-  Serial.write(buf, it - buf);
+
+  Encoder* encoder_obj = new Encoder(buf, it - buf);
+  encoder_obj->printEncodedData();
+  delete encoder_obj;
+  //Serial.write(buf, it - buf);
   free(buf);
 }
 
