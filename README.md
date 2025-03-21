@@ -10,7 +10,15 @@
   <br><br>
 <b>This fork intends to improve the functionality of the Marauder firmware for those using barebones generic esp32 boards with no screen or even an sd card.</b> 
 
+
+# Improvements
+Prints pcap data as base64 instead of raw binary when outputting to the terminal. This makes the data easier to handle for interfaces like PuTTY, allowing you to simply copy the output and decode back into a binary file.
+<br><br>
+
+
 # In The Works
-<b>Currently working on a more easily handled format for pcap data being printed to the terminal.</b>
+-Clarifying start and end of captured packets.
 <br><br> 
-<b>Looking into Evil Portal functionality without writing index.html to sd card.</b>
+-Looking into Evil Portal functionality without writing index.html to sd card.
+<br><br>
+-The stopscan command doesn't always work... looking into that.
